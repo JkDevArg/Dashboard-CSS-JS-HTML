@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+:root {
+    --naranja: #ee7512;
+    --azul: #287bff;
+    --blanco: #fff;
+    --gris: #f5f5f5;
+    --negro1: #222;
+    --negro2: #999;
+
+    --cancelado: #e02c2c;
+    --finalizado: #8de02c;
+    --archivado: #ff06f3;
+    --proceso: #2c98e0;
+    --desactivado: #636363;
+}
+
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+}
+
+.navegacion {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--naranja);
+    border-left: 10px solid var(--naranja);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navegacion.activo {
+    width: 80px;
+}
+
+.navegacion ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navegacion ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navegacion ul li:hover,
+.navegacion ul li.hovered {
+    background: var(--blanco);
+}
+
+.navegacion ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navegacion ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.navegacion ul li:hover a,
+.navegacion ul li.hovered a {
+    color: var(--naranja);
+}
+.logo {
+    color: var(--finalizado);
+}
+
+.t1 {
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navegacion ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navegacion ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+
+.navegacion ul li a .titulo {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navegacion ul li:hover a::before,
+.navegacion ul li.hovered a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--blanco);
+    pointer-events: none;
+}
+
+.navegacion ul li:hover a::after,
+.navegacion ul li.hovered a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--blanco);
+    pointer-events: none;
+}
+
+.detalles .proyectosRecientes {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--blanco);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+/* PRINCIPAL */
+.principal {
+    position: absolute;
+    width: calc(100%  - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--blanco);
+    transition: 0.5s;
+}
+
+.principal.activo {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.barra-superior {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.palanca {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.buscador {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.buscador label {
+    position: relative;
+    width: 100%;
+}
+
+.buscador label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--negro2);
+}
+
+.buscador label ion-icon {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.usuario {
+    position: relative;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.usuario img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cajaDeTarjetas {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+.cajaDeTarjetas .tarjeta {
+    position: relative;
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cajaDeTarjetas .tarjeta .numeros {
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--naranja);
+}
+
+.cajaDeTarjetas .tarjeta .nombreTarjeta {
+    color: var(--negro2);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.cajaDeTarjetas .tarjeta .cajaIcono {
+    font-size: 3.5em;
+    color: var(--negro1);
+}
+
+.cajaDeTarjetas .tarjeta:hover {
+    background: var(--naranja);
+}
+
+.cajaDeTarjetas .tarjeta:hover .numeros,
+.cajaDeTarjetas .tarjeta:hover .nombreTarjeta,
+.cajaDeTarjetas .tarjeta:hover .cajaIcono {
+    color: var(--blanco);
+}
+
+.cajaDeTarjetas .tarjeta:hover div > *  {
+    color: var(--blanco);
+}
+
+.detalles {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    /* margin-top: 10px; */
+}
+
+.detalles .proyectosRecientes {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--blanco);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.tarjetaCabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tarjetaCabecera h2 {
+    font-weight: 600;
+    color: var(--naranja);
+}
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--naranja);
+    text-decoration: none;
+    color: var(--blanco);
+    border-radius: 6px;
+}
+
+.detalles table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.detalles table thead td {
+    font-weight: 600;
+}
+
+.detalles .proyectosRecientes table tr {
+    color: var(--negro1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.detalles .proyectosRecientes table tr:last-child {
+    border-bottom: none;
+}
+
+.detalles .proyectosRecientes table tbody tr:hover {
+    background: var(--naranja);
+    color: var(--blanco);
+}
+
+.detalles .proyectosRecientes table tr td {
+    padding: 20px;
+}
+
+.detalles .proyectosRecientes table tr td:last-child {
+    text-align: end;
+}
+
+.detalles .proyectosRecientes table tr td:nth-child(2) {
+    text-align: end;
+}
+
+.detalles .proyectosRecientes table tr td:nth-child(3) {
+    text-align: center;
+}
+
+.equipo.backend {
+    padding: 2px 4px;
+    background: var(--negro1);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.equipo.frontend {
+    padding: 2px 4px;
+    background: var(--blanco);
+    color: var(--negro1);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.finalizado {
+    padding: 2px 4px;
+    background: var(--finalizado);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.proceso {
+    padding: 2px 4px;
+    background: var(--proceso);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.cancelado {
+    padding: 2px 4px;
+    background: var(--cancelado);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.desactivado {
+    padding: 2px 4px;
+    background: var(--desactivado);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.estado.archivado {
+    padding: 2px 4px;
+    background: var(--archivado);
+    color: var(--blanco);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pullRecientes {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--blanco);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+.pullRecientes .cajaImg {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.pullRecientes .cajaImg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pullRecientes table tr td {
+    padding: 12px 10px;
+}
+
+.pullRecientes table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.pullRecientes table tr td h4 span {
+    font-size: 14px;
+    color: var(--negro2);
+}
+
+.pullRecientes table tr:hover {
+    background: var(--naranja);
+    color: var(--blanco);
+    
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.pullRecientes table tr:hover td h4 span {
+    color: var(--blanco);
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+    .navegacion {
+        left: -300px;
+    }
+
+    .navegacion.activo {
+        width: 300px;
+        left: 0;
+    }
+    
+    .principal {
+        width: 100%;
+        left: 0;
+    }
+
+    .principal.activo {
+        left: 300px;
+    }
+
+    .cajaDeTarjetas {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .detalles {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .proyectosRecientes {
+        overflow-x: auto;
+    }
+    .estado.proceso {
+        white-space: nowrap;
+    }
+    .estado.desactivado {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cajaDeTarjetas {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .tarjetaCabecera h2 {
+        font-size: 20px;
+    }
+
+    .usuario {
+        min-width: 40px;
+    }
+
+    .navegacion {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navegacion.activo {
+        width: 100%;
+        left: 0;
+    }
+
+    .palanca {
+        z-index: 1000;
+    }
+
+    .principal.activo .palanca {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--blanco);
+    }
+}

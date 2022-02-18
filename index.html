@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Creative - DashBoard</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="navegacion">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon logo"><ion-icon name="leaf-outline"></ion-icon></span>
+                        <span class="titulo t1">Juice Creative</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="titulo">Escritorio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="titulo">Cliente</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
+                        <span class="titulo">Mensajes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="help-buoy-outline"></ion-icon></span>
+                        <span class="titulo">Ayuda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="titulo">Configuración</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="titulo">Contraseña</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="titulo">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="principal">
+            <!-- BARRA SUPERIOR -->
+            <div class="barra-superior">
+                <div class="palanca">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!-- BUSCADOR -->
+                <div class="buscador">
+                    <label>
+                        <input type="text" placeholder="Buscar...">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <!-- USUARIO IMAGEN -->
+                <div class="usuario">
+                    <img src="src/juice.png" alt="Juice">
+                </div>
+            </div>
+            <!-- TARJETAS -->
+            <div class="cajaDeTarjetas">
+                <div class="tarjeta">
+                    <div>
+                        <div class="numeros">5</div>
+                        <div class="nombreTarjeta">Repositorios</div>
+                    </div>
+                    <div class="cajaIcono">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div>
+                        <div class="numeros">10+</div>
+                        <div class="nombreTarjeta">Git Pull</div>
+                    </div>
+                    <div class="cajaIcono">
+                        <ion-icon name="git-pull-request-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div>
+                        <div class="numeros">2</div>
+                        <div class="nombreTarjeta">Publicos</div>
+                    </div>
+                    <div class="cajaIcono">
+                        <ion-icon name="globe-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div>
+                        <div class="numeros">3</div>
+                        <div class="nombreTarjeta">Base de Datos</div>
+                    </div>
+                    <div class="cajaIcono">
+                        <ion-icon name="server-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="detalles">
+                <!-- PROYECTOS RECIENTES -->
+                <div class="proyectosRecientes">
+                    <div class="tarjetaCabecera">
+                        <h2>Proyectos Recientes</h2>
+                        <a href="#" class="btn">Ver Todos</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Tipo</td>
+                                <td>Equipo</td>
+                                <td>Estado</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Proyecto Uno</td>
+                                <td>Aplicación</td>
+                                <td> <span class="equipo backend">Back End</span></td>
+                                <td><span class="estado finalizado">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Dos</td>
+                                <td>ECommerce</td>
+                                <td> <span class="equipo backend">Back End</span></td>
+                                <td><span class="estado proceso">En Proceso</span></td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Tres</td>
+                                <td>Blog</td>
+                                <td> <span class="equipo backend">Back End</span></td>
+                                <td><span class="estado cancelado">Cancelado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Cuatro</td>
+                                <td>ECommerce</td>
+                                <td> <span class="equipo frontend">Front End</span></td>
+                                <td><span class="estado desactivado">Desactivado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Cinco</td>
+                                <td>Blog</td>
+                                <td> <span class="equipo frontend">Front End</span></td>
+                                <td><span class="estado archivado">Archivado</span></td>
+                            </tr>
+                            <tr>
+                                <td>Proyecto Cinco</td>
+                                <td>Plantilla</td>
+                                <td> <span class="equipo frontend">Front End</span></td>
+                                <td><span class="estado archivado">Archivado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- PULL RECIENTES -->
+                <div class="pullRecientes">
+                    <div class="tarjetaCabecera">
+                        <h2>Pull Recientes</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="cajaImg"><img src="src/dino.jpg" alt="Dino"></div></td>
+                            <td><h4>Dino<br><span>Juice</span></h4></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let palanca = document.querySelector('.palanca');
+        let navegacion = document.querySelector('.navegacion');
+        let principal = document.querySelector('.principal');
+
+        palanca.onclick = function(){
+            navegacion.classList.toggle('activo');
+            principal.classList.toggle('activo');
+        }
+
+        window.addEventListener('resize', function(elsize) {
+            console.log(window.innerWidth);
+            if (window.innerWidth <= 480) {
+                navegacion.classList.remove("activo");
+                principal.classList.remove("activo");
+            }
+        });
+
+        let lista = document.querySelectorAll('.navegacion li');
+        function enlaceActivo(){
+            lista.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        lista.forEach((item) => 
+        item.addEventListener('mouseover', enlaceActivo));
+    </script>
+</body>
+</html>
